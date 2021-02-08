@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= `Error ${err.status}`
+  h2= `${err.message}`
+    br
+    p
+        a.button(href='/books') Home

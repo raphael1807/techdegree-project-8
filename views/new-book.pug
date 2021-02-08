@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.heading= "New Book Page"
+    h2.subhead= "Add a new book to the database 😊"
+
+    form(action='/books/new', method='post')
+        include form
+        p
+            input(type='submit', value='Create new book')
+        p
+            a(class='button', href='/') Cancel
