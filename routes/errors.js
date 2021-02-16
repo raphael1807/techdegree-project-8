@@ -20,12 +20,14 @@ errors.use((req, res, next) => {
 errors.use((err, req, res, next) => {
     // If err.status === 404, render page-not-found.
     if (err.status === 404) {
-        res.status(404).render('page-not-found', { err });
+        res.status(404);
+        res.render('page-not-found', { err });
     }
     // Else if err.status is not 404, render error.
     else {
         err.message = err.message || `Oops - Our servers is on a break. 🚧`;
-        res.status(err.status || 500).render('error', { err });
+        res.status(err.status || 500);
+        res.render('error', { err });
     }
 });
 
